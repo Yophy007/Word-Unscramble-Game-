@@ -1,26 +1,55 @@
-<!-- Word Unscramble Challenge -->
-<div id="start-screen" class="screen active">
-  <h1>Word Unscramble Challenge</h1>
-  <button id="start-btn">Start Game</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word Unscramble Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-<div id="game-screen" class="screen">
-  <div class="game-header">
-    <p>Level: <span id="level">1</span></p>
-    <p>Score: <span id="score">0</span></p>
-    <p>Time: <span id="timer">30</span>s</p>
+  <!-- Start Screen -->
+  <div id="start-screen" class="screen active">
+    <h1>Word Unscramble Challenge</h1>
+    <button id="start-btn">Start Game</button>
   </div>
-  <h2 id="scrambled-word">_ _ _</h2>
-  <input type="text" id="user-input" placeholder="Type your guess..." />
-  <div class="controls">
-    <button id="submit-btn">Submit</button>
-    <button id="hint-btn">Hint</button>
-  </div>
-  <p id="hint-text"></p>
-</div>
 
-<div id="game-over-screen" class="screen">
-  <h1 id="game-over-title">Game Over</h1>
-  <p>Your Score: <span id="final-score"></span></p>
-  <button id="restart-btn">Play Again</button>
-</div>
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="game-header">
+      <p>Level: <span id="level">1</span></p>
+      <p>Score: <span id="score">0</span></p>
+      <p>Time: <span id="timer">30</span>s</p>
+    </div>
+    <h2 id="scrambled-word">_ _ _</h2>
+    <input type="text" id="user-input" placeholder="Type your guess..." />
+    <div class="controls">
+      <button id="submit-btn">Submit</button>
+      <button id="hint-btn">Hint</button>
+    </div>
+    <p id="hint-text"></p>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="game-over-screen" class="screen">
+    <h1 id="game-over-title">Game Over</h1>
+    <p>Your Score: <span id="final-score"></span></p>
+    <button id="restart-btn">Play Again</button>
+  </div>
+
+  <!-- Music & Sound Toggle -->
+  <div id="audio-controls">
+    <button id="music-toggle">🔊</button>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="audio/music.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="correct-sound" src="audio/correct.mp3"></audio>
+  <audio id="wrong-sound" src="audio/wrong.mp3"></audio>
+  <audio id="gameover-sound" src="audio/gameover.mp3"></audio>
+  <audio id="levelup-sound" src="audio/levelup.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
